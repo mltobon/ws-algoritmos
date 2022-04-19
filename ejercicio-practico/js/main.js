@@ -1,5 +1,3 @@
-window.onload = function(){
-
     //Hacemos referencia a los objetos en el formulario.
     const selectElement = document.forms[0].categoria;
     
@@ -70,10 +68,10 @@ window.onload = function(){
     
     function showProducts(){
         if(selectElement.value=="Helado"){
-            container2.textContent = "Chocolate (14.0), Vainilla (12.0), Fresa (9.98), Limón (6.0), Mantecado (7.5)";
+            container2.textContent = "Chocolate ($14.0), Vainilla ($12.0), Fresa ($9.98), Limón ($6.0), Mantecado ($7.5)";
         }
         else if (selectElement.value=="Torta"){
-            container2.textContent = "Chocolate (14.0), Vainilla (12.0), Fresa (9.98), Limón (6.0)";
+            container2.textContent = "Chocolate ($14.0), Vainilla ($12.0), Fresa ($9.98), Limón ($6.0)";
         }
     }
     
@@ -222,7 +220,4 @@ window.onload = function(){
             return total;
         }  
     //LLave para cerrrar la función producto 
-    }
-    
-    //Llave para cerrar el función del inicio
     }
