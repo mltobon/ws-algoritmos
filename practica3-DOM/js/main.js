@@ -50,10 +50,12 @@ function testQuerySelector(){
     // Todo lo que esté en "container"
     console.log(document.querySelectorAll(".container .text-danger"));
 }
-
+/**
+ * Esto permite.... obtener un elemento dado su tag name que signica el nombre del elemento html
+ */
 function testTagName(){
     const tagName= document.getElementsByTagName("div");
     console.log("**TagName** ");
     console.log(tagName);
-    window.scrollTo(200, 0);    
+    window.scrollTo(200, 0);      
 }

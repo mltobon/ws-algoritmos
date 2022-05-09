@@ -21,8 +21,8 @@ const pintarMensajeExito = () => {
 
 const pintarMensajeError = (errores) => {
     errores.forEach((item) => {
-        item.tipo.classList.remove("d-none");
-        item.tipo.textContent = item.msg;
+        item.element.classList.remove("d-none");
+        item.element.textContent = item.msg;
     });
 };
 
@@ -37,8 +37,8 @@ formulario.addEventListener("submit", (e) => {
         userName.classList.add("is-invalid");
 
         errores.push({
-            tipo: alertName,
-            msg: "Formato no válido campo nombre, solo letras",
+            element: alertName,
+            msg: "Formato no válido campo nombre, solo letras, no poner solo espacios",
         });
     } else {
         userName.classList.remove("is-invalid");
@@ -51,7 +51,7 @@ formulario.addEventListener("submit", (e) => {
         userEmail.classList.add("is-invalid");
 
         errores.push({
-            tipo: alertEmail,
+            element: alertEmail,
             msg: "Escriba un correo válido",
         });
     } else {
@@ -62,9 +62,10 @@ formulario.addEventListener("submit", (e) => {
 
     if (errores.length !== 0) {
         pintarMensajeError(errores);
-        return;
+    }else{
+        console.log("Formulario enviado con éxito");
+        pintarMensajeExito();
     }
 
-    console.log("Formulario enviado con éxito");
-    pintarMensajeExito();
+    
 });

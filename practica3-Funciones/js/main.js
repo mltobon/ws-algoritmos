@@ -1,5 +1,7 @@
 "use strict";
 
+
+
 const boton1= document.getElementById("boton1");
 const boton2= document.getElementById("boton2");
 const boton3= document.getElementById("boton3");
@@ -15,10 +17,6 @@ const boton12= document.getElementById("boton12");
 const boton13= document.getElementById("boton13");
 const boton14= document.getElementById("boton14");
 
-//le ponemos un evento al boton mediante el atributo onclick del elemento
-boton1.onclick=function(){
-    alert("Hola");
-};
 //expression function
 const saludar= ()=>{
     console.log("****** ")
@@ -26,6 +24,12 @@ const saludar= ()=>{
     var message=prompt("ingrese su nombre");
     showMessage(from, message);
 };
+
+//le ponemos un evento al boton mediante el atributo onclick del elemento
+boton1.onclick=function(){
+    alert("Hola");
+};
+
 //le ponemos un evento al boton mediante el método listener
 boton2.addEventListener("click",saludar);
 
@@ -50,7 +54,7 @@ boton4.onclick=function(){
 function ask(question, yes, no) {
     if (confirm(question)) yes()
     else no();
-  }
+}
   
   function showOk() {
     alert( "Estás de acuerdo." );
@@ -67,7 +71,7 @@ boton5.onclick= function(){
         function() { alert("Estás de acuerdo"); },
         function() { alert("Cancelaste la ejecución."); }
       );
-} 
+};
 boton6.onclick= function(){
     let age = prompt("Cuál es tu edad?", 18);
     // declarar condicionalmente una función
@@ -83,7 +87,7 @@ boton6.onclick= function(){
       }
     }
     welcome(); // Error: welcome no está definida - Ver en consola
-}
+};
 boton7.onclick= function(){
     let age = prompt("Cuál es tu edad?", 18);
     let welcome;
@@ -100,7 +104,7 @@ boton7.onclick= function(){
 }
 boton8.onclick= function(){
     let variable=prompt("ingrese un número para la variable");
-    let mensaje;
+    const mensaje;
     if(variable==0){
         mensaje="Buenos días";
     }
@@ -110,14 +114,13 @@ boton8.onclick= function(){
     alert(mensaje);
     //también puedo escribir esto así:
     let variable2=prompt("ingrese otro número");
-    mensaje=(variable2==10)?"Buenos días":"Buenas tardes";
+   let mensaje4=(variable2==10)?"Buenos días":"Buenas tardes";
     alert("**"+mensaje+"**");
 }
 
 boton9.onclick= function(){
     let age = prompt("Cuál es tu edad?", 20);
-    let welcome = (age < 20) ?
-    function() { alert("Hola!"); } :
+    let welcome = (age < 20) ? function() { alert("Hola!"); } :
     function() { alert("Saludos!"); };
     welcome(); // ahora ok
 }
@@ -129,9 +132,12 @@ boton9.onclick= function(){
 
 function testReturn(){
    // alert("esta funcion no tiene retorno");
-    return "estamos retornando la función";
+   let mensaje12="hola";
+   return mensaje12;
+   // return "estamos retornando la función";
     //no se pone nada despues del return, ya que no se va ejecutar.
 }
+console.log(testReturn());
 //alert("El valor de la funcion es: "+testReturn());
 let testRetorno= testReturn();
 boton10.onclick= function(){
@@ -144,13 +150,18 @@ boton10.onclick= function(){
  */
 
 //sin parametros
-//functions se conviernte en ()=>
+//function se conviernte en ()=>
 const saludarF= ()=>{
      alert("hola funcion flecha");
   }
 boton11.onclick= function(){
     saludarF();
 }
+let ejemplo=`asdfasdf
+<h1> asdfasdf </h1>
+<p>asdfasdf</p>
+asdfafdsa ${boton1}
+`;
 //cuando la función requiere parametros
 const saludarFlecha= (nombre)=>{
     let frase= `Hola ${nombre} cómo estas?`;

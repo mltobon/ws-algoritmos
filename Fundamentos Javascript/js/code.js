@@ -81,12 +81,12 @@ document.getElementById("arrayComun").innerHTML="<b>Esto es un arreglo comun:</b
  * se le asocian nombres a las posiciones
  * La sintaxis es similiar al formato JSON*
  */ 
-let estudiante1={
+let estudiante1=
+    {
     nombre: "Carolina",
     edad:23,
     genero:"F",
-    carrera:"Ingeniería de Software"
-};
+    carrera:"Ingeniería de Software"};
 
 //document.write("******************"+estudiante1[0]+"<br>");
 
@@ -108,13 +108,13 @@ document.write(fraseSaludo+"<br>");
 let numero=20;
 while(numero>0){
   //  document.write(numero+"<br>");
-    if(numero==18){
-       // document.write("<b>"+numero+"<b><br>");
+    if(numero==10){
+        document.write("<b>"+numero+"</b><br>");
         break; //termina el ciclo
         //no se ejecutan las líneas de codigo despues del break, 
         //se termina inmediatamente el ciclo
     }
-    if(numero==15){
+    if(numero==18){
        numero--;
        continue; //salta el ciclo
     } 
@@ -170,12 +170,17 @@ estudiantesAlgoritmos=["Maria Fernanda H", "Maria Fernanda L", "Santiago Jaramil
 estudiantesIntroduccion=["Valentina", "Carlos", "Javier", "Mariana",estudiantesAlgoritmos,"Otro Estudiante"];
 document.write("******************************* <br>");
 
-for(let estudiante in estudiantesIntroduccion){
-        document.write(estudiantesIntroduccion[estudiante]+"<br>");
+for(let estudiante of estudiantesIntroduccion){
+        document.write(estudiante+"<br>");
 
 }
+document.write("*********+++++++++++++++++++++++*************** <br>");
 
 
+estudiantesTest=["a","b", "c"];
+estudiantesTest.array.forEach(element => {
+    console.log(element);
+});
 //label
 estudiantesIntroduccion:
 for(let estudiante in estudiantesIntroduccion){
@@ -183,22 +188,23 @@ for(let estudiante in estudiantesIntroduccion){
        // document.write(estudiantesIntroduccion[estudiante]);
         //continue; //se salta el arreglo de estudiantes de algoritmos y continua con otro estudiante
         estudiantesAlgoritmos:
-        for(let estudiante of estudiantesAlgoritmos)
+        for(let estudiante2 of estudiantesAlgoritmos)
         {
            /* Saltamos a Maria Fernanda H
             if(estudiante=="Maria Fernanda H"){
                 continue;
             }*/ 
            
-            if(estudiante=="Maria Fernanda L"){
-                break estudiantesIntroduccion;
+            if(estudiante2=="Maria Fernanda L"){
+                //break estudiantesIntroduccion;
+                break;
             }
            // break estudiantesAlgoritmos;
-            document.write(estudiante+"<br>")
+            document.write(estudiante2+"<br>")
            // break estudiantesIntroduccion; //termino los dos bucles luego de imprimir el primer estudiante de algoritmos
              
         }
-        //break; //terminamos antes de imprimir otro estudiante
+        break; //terminamos antes de imprimir otro estudiante
     }
     else{
         document.write(estudiantesIntroduccion[estudiante]+"<br>");
