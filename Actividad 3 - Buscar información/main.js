@@ -1,5 +1,6 @@
 //Buscar una asignatura y mostrar los estudiantes registrados
 let asignaturas={
+    profesor:"Monica",
     algoritmos:["Monica","Santiago","Nicolas"],
     programacion:["Monica","Alvaro","Maria Fernanda","Santiago J"],
     introduccion:["Monica","Juan Pablo", "Juan Camilo", "Juan Jose"]
@@ -18,11 +19,11 @@ const buscarInformacion=asignatura=>{
 const imprimir=()=>{
     let asignatura=prompt("Ingrese la asignatura a buscar");
     let busqueda=buscarInformacion(asignatura);
+    console.log(asignaturas);
     if(busqueda!=false){
         //asumiendo que el primer dato corresponde con el profesor
-        let profesor= asignaturas[asignatura][0];
-        asignaturas[asignatura].shift();
-        document.write(`El profesor de ${asignatura} es: <b> ${profesor} </b><br>`);
+        let professor= asignaturas["profesor"];
+        document.write(`El profesor de ${asignatura} es: <b> ${professor} </b><br>`);
         document.write(`Los estudiantes de ${asignatura} son: ${asignaturas[asignatura]}`);
     }
     else{

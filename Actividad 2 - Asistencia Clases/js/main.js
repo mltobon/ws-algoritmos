@@ -18,7 +18,7 @@ const inicializarPrograma= ()=>{
      }
      //recorrer la matriz de estudiantes
      for(let i=0; i<clases; i++){
-        for(alumno in alumnosAsignatura){
+        for(let alumno in alumnosAsignatura){
             let presente=prompt("El estudiante "+alumnosAsignatura[alumno][0]+" esta presente en la clase"+(i+1)+"? marque p/P");
             tomarAsistencia(presente,alumnosAsignatura,alumno);
         }
@@ -44,7 +44,7 @@ const inicializarPrograma= ()=>{
  * @param {numero de clases de la asignatura} numClases 
  */
 const imprimir=(alumnosAsignatura,numClases)=>{
-    for(alumno in alumnosAsignatura){
+    for(let alumno in alumnosAsignatura){
     
         let resultado= `${alumnosAsignatura[alumno][0]}:<br>
         _______Presentes: ${alumnosAsignatura[alumno][1]} <br>

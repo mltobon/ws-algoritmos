@@ -1,14 +1,14 @@
 /**
  * METODOS DE CADENAS
  */
-let cadena1="Monica Lorena";
+let cadena1="   Monica Lorena   ";
 let cadena2="Lorena"; 
 let cadena3=cadena1.trim();
 
 let cadenaResultado=cadena1.endsWith(cadena2);
-document.write(cadenaResultado);
+document.write("Cádena 1 termina con cádena 2: "+cadenaResultado);
 document.write("<br>");
-document.write(cadena3);
+document.write("Cadena1: Monica Lorena.trim()= "+cadena3);
 document.write("<br>");
 
 //otros metodos:
