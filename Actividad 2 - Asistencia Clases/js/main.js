@@ -8,7 +8,7 @@ const inicializarPrograma= ()=>{
     //creamos un arreglo para almacenar la información de los alumnos y las asistencias
     let alumnosAsignatura=[];
     let clases= prompt("¿Cuántas clases tiene el curso?");
-    
+    //comentario
      for(let i=0; i<cantidadAlumnos;i++){
          //arreglo bidimensional , nombre del estudiante y cantidad de asistencias
          // las asistencias se inicializan en 0
