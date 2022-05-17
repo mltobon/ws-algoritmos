@@ -2,7 +2,7 @@
 let asignaturas={
     profesor:"Monica",
     algoritmos:["Monica","Santiago","Nicolas"],
-    programacion:["Monica","Alvaro","Maria Fernanda","Santiago J"],
+    programacion:["Monica","Nicolas","Alvaro","Maria Fernanda","Santiago J"],
     introduccion:["Monica","Juan Pablo", "Juan Camilo", "Juan Jose"]
 }
 const buscarInformacion=asignatura=>{
@@ -29,5 +29,22 @@ const imprimir=()=>{
     else{
         document.write("No se encuentra esa materia");
     }
+    let estudiante=prompt("ingrese el estudiante");
+    buscarEstudiante(estudiante);
 }
-//En qué materias está registrado un estudiante?
+const buscarEstudiante=estudiante=>{
+    let clases=[];
+    for(let asignatura in asignaturas){
+        if(asignaturas[asignatura].includes(estudiante)){
+            clases.push(asignatura);
+        }
+    }
+    alert(clases);
+}
+
+const test=estudiante=>{
+    let clases=[];
+    for(let asignatura in asignaturas){
+
+    }
+}
