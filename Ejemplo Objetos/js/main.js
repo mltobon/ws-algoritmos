@@ -1,5 +1,11 @@
 window.onload=iniciarDatos;
-var personas=[];
+var personas;
+if(localStorage.getItem("personas")){
+    personas=JSON.parse(localStorage.getItem("personas"));
+}
+else{
+    personas=[];
+}
 
 function iniciarDatos(){
     const botonAgregar=document.getElementById("btnAgregar");
@@ -16,14 +22,18 @@ const direccion= document.getElementById("direccion").value;
 
    let persona={
         "nombre":nombre,
-        "apellido":apellido
+        "apellido":apellido,
+        "telefono":telefono
     }
     personas.push(persona);
-    localStorage.personas=JSON.stringify(personas);
+    localStorage.setItem("personas",JSON.stringify(personas));
 }
 
 function mostrar(){
-    console.log(localStorage.getItem("personas"));
-    var estudiantes1=JSON.parse(localStorage.personas);
-    document.getElementById("mostrar").innerHTML=JSON.stringify(estudiantes1);
+    let personasArreglo=JSON.parse(localStorage.getItem("personas"));
+    console.log(personasArreglo);
+    personasArreglo.forEach(persona => {
+        document.getElementById("mostrar").innerHTML+=persona.nombre+"<br>";    
+    });
+    localStorage
 }  
