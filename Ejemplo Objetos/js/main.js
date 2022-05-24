@@ -37,3 +37,44 @@ function mostrar(){
     });
     localStorage
 }  
+// otros modos de usar objetos
+const camilo = {
+    nombre: 'Camilo',
+    edad: 22,
+    sexo: 'masculino',
+    pasatiempos: ['jugar futbol', 'escuchar musica'],
+    hablar: function(){
+      return `hola soy ${this.nombre}, y tengo ${this.edad} años`;
+    }
+  }
+  
+  const andrea = {
+    nombre: 'Andrea',
+    edad: 22,
+    sexo: 'femenino',
+    pasatiempos: ['patinar', 'bailar'],
+    hablar: function(){
+      return `hola soy ${this.nombre}, y tengo ${this.edad} años`;
+    }
+  }
+  console.log(camilo);
+  console.log(andrea);
+
+  // pero y si deseo crear muchas personas....
+
+  //otro enfoque:
+
+  function Persona(nombre,edad,sexo,pasatiempos){
+      this.nombre=nombre;
+      this.edad=edad;
+      this.sexo=sexo;
+      this.pasatiempos=pasatiempos;
+  }
+
+//ahora vamos a crear 3 pesonas
+
+let alejandra=new Persona("Alejandra",22,"femenino",["cantar","jugar"],function(){
+    return `hola soy ${this.nombre}, y tengo ${this.edad} años`;
+});
+
+console.log(alejandra);
