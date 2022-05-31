@@ -1,5 +1,5 @@
-import {user} from './constants.js';
+import {constants} from './constants.js';
 import {login} from './login.js';
 
-console.log(user);
-login(user,"123");
+console.log(constants.user);
+login(constants.user,constants.password);

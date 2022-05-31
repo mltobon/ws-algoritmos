@@ -1,2 +1,8 @@
-export const user= "Monica";
-const password= "1234";
+const user= "Monica";
+const password= "123";
+
+
+export const constants={
+    user,
+    password
+}

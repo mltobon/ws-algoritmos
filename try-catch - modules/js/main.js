@@ -5,6 +5,8 @@ let sumaArray= array.reduce((acum,index)=>{
 },0);
 console.log(sumaArray);
 
+array= null;
+
 try{
     let maxArray= array.reduce((acum,index)=>{
         return Math.max(acum,index);
@@ -13,6 +15,10 @@ try{
 }
 catch(error){
     console.log("no fue posible obtener el máximo del arrego");
-    console.log("el error es: "+error);
+    array= [1,2,3,4];
+    let maxArray= array.reduce((acum,index)=>{
+        return Math.max(acum,index);
+    },0);
+    console.log(maxArray);
 }
 console.log("Hola a todos");

@@ -187,7 +187,7 @@ let vengadores = [
   {nombre: "bruce banner", nombreHeroe: "the hulk",salario:30000},
   {nombre: "peter parker", nombreHeroe: "spiderman",salario:40000},
   {nombre: "tchalla", nombreHeroe: "black panther",salario:50000}
-]
+];
 
 //uso del forEach
 //recorremos el arrego e imprimimos el nombre del vengador
@@ -297,6 +297,11 @@ console.log(candidatoSuertudo);
 // esta función ejecuta una función sobre un arreglo y nos devuelve un único valor
 console.log("*****REDUCE******");
 const arrayReduce=[2,4,6,8,10];
+
+console.log(Math.max(2,3,4,5,30));
+
+console.log("max "+Math.max.apply(Math,arrayReduce));
+
 const resultadoReduce=arrayReduce.reduce((acum,item,index,arr)=>{ 
   return acum=acum+item; //voy a sumar todos los valores del arreglo
 });
@@ -309,7 +314,7 @@ console.log("la suma inciando el acumulador en 10 es: "+resultadoReduce2);
 const cadenas= ["Mi","nombre", "es", "Monica"];
 console.log(cadenas.reduce((acc, item)=>{
   return acc+=" "+item;
-},"hola a todos!"));
+}));
 
 // y ahora con objetos...
 // vamos a obtener la suma de los salarios de los vengadores
@@ -330,3 +335,18 @@ const shots = [
 
 // como podría obtener el monto mayor (sin usar clase Math)
 
+console.log(shots.reduce((acum,item)=>{
+  if(acum==0){
+    acum=item.amount;
+  }
+  else if(item.amount>acum)
+  {acum=item.amount;}
+  return acum;
+},0));
+
+
+let maximo=shots.reduce((acum,index)=> {return Math.max(acum,index.amount)},0);
+console.log("maximo "+maximo);
+
+const max=shots.reduce((acc, shot) => acc = acc > shot.amount ? acc : shot.amount, 0);
+console.log(max);
