@@ -1,5 +1,9 @@
 import {constants} from './constants.js';
-import {login} from './login.js';
+import {login as loginExterno} from './login.js';
 
 console.log(constants.user);
-login(constants.user,constants.password);
+loginExterno(constants.user,constants.password);
+
+function login(){
+    console.log("hola");
+}
