@@ -10,7 +10,6 @@ buttonListUser.addEventListener("click",getUsers);
 const url= "https://629f80b38b939d3dc2994aa1.mockapi.io/api/v1/";
 let users=[];
 
-
 const getInfo=async(resource)=>{
     const response= await fetch(url+resource);
     return response.json();
@@ -30,12 +29,13 @@ async function showInfo(){
 
 function addUser(){
     let nombre=prompt("Ingrese el nombre");
-    let edad= prompt("ingrese la edad");
+    let edad= parseInt(prompt("ingrese la edad"));
     let user={
         nombre:nombre,
         edad:edad
     }
     users.push(user);
+    showInfo();
     saveUser(user);
 }
 function deleteUser(){
@@ -44,12 +44,10 @@ function deleteUser(){
 }
 
 function deleteFinalUser(id){
-    //mensaje de confirmación
     fetch(url+"users/"+id,{
         method:'DELETE'
     })
-    .then(response=>response.json())
-    .then(data=>console.log(data));
+    .then(response=>response.json());
     getUsers();
 }
 
@@ -61,6 +59,5 @@ function saveUser(user){
             "Content-type":"application/json"
         }
     })
-    .then(response=>response.json())
-    .then(data=>console.log(data));
+    .then(response=>response.json());
 }
